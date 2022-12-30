@@ -24,6 +24,9 @@ When Firewalla is down it looks like this:
 
 2. Go to [IFTTT.com](https://IFTTT.com) and create an applet as shown below.
 <img width="828" alt="image" src="https://user-images.githubusercontent.com/1205471/210029514-f6eea947-b819-41a5-8d30-ff53eb90f331.png">
+
+You define the action name in the first webhook action. It can be whatever you like, but you will need to keep track of it for use later. 
+
 The filter code looks like this: 
 
 ```
