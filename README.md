@@ -1,6 +1,8 @@
 # Introduction: Update a Google Spreadsheet with Firewalla's status
 
-This is a script for updating a Firewalla box's status to a Google Spreadsheet and sending an alert when it is down longer than any period you choose. It is tested on  Firewalla 1.975.
+This is a script for updating a Firewalla box's status in a Google Spreadsheet and sending an alert when it is down longer than any period you choose. It is tested on  Firewalla 1.975.
+
+Technically, Firewalla is sending an "alive" message to the spreadsheet via IFTTT and IFTTT monitors if the spreadsheet ever says Firewalla is down. 
 
 
 # Notes
