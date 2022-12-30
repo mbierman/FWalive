@@ -86,11 +86,12 @@ Note "alive" is the trigger and YOURIFTTTKEY can be found under Documentation ht
   vi user_crontab
    ```
    
-   Add a line something like this
+   Add a line something like this:
+   
    ```
    */1 * * * * /data/fwalive.sh
    ```
    
-   which runs once every minute (or however often you want it to run). 
+   which says once every minute run the script that updates the spreadsheet via IFTTT. 
    
-   Save the file and restart Firewalla. You can confirm the cronjob is in place by doing `crontab -l` after Firewalla restarts.
+Save the file and restart Firewalla. You can confirm the cronjob is in place by doing `crontab -l` after Firewalla restarts. This will persist through updates and reboots but not resets. 
