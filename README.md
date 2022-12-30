@@ -15,6 +15,13 @@ To install:
 <img width="699" alt="image" src="https://user-images.githubusercontent.com/1205471/210029758-6edacdee-c632-497a-8acc-0cdccd2aee48.png">
 You can copy mine, if you wish. 
 
+When Firewalla is down it looks like this: 
+
+
+<img width="702" alt="image" src="https://user-images.githubusercontent.com/1205471/210031382-608665e3-61d3-4934-854b-162134516602.png">
+
+
+
 2. Go to [IFTTT.com](https://IFTTT.com) and create an applet as shown below.
 <img width="828" alt="image" src="https://user-images.githubusercontent.com/1205471/210029514-f6eea947-b819-41a5-8d30-ff53eb90f331.png">
 The filter code looks like this: 
