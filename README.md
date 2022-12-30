@@ -33,6 +33,7 @@ GoogleSheets.updateCellInSpreadsheet.setFilename('Alive');
 GoogleSheets.updateCellInSpreadsheet.setCell('A1');
 GoogleSheets.updateCellInSpreadsheet.setValue(mytime);
 ```
+
 and the Spreadsheet action looks like this: 
 ![image](https://user-images.githubusercontent.com/1205471/210031071-378c7bc4-adc1-4836-8f6d-30296211703c.png)
 
@@ -44,6 +45,7 @@ This assumes a setup like the spreadsheet provided. If you make any changes you 
 <img width="816" alt="image" src="https://user-images.githubusercontent.com/1205471/210029888-310ed6ce-4bd7-40b3-8148-4decc7c4df7b.png">
 
 Filter code:
+
 ```
 let ingredient = GoogleSheets.cellUpdatedInSpreadsheet.Value;
 let searchTerm = 'UP';
@@ -64,27 +66,29 @@ if (ingredient.indexOf(searchTerm) !== -1) {
 
 the Rich notification works like this:
 <img width="779" alt="image" src="https://user-images.githubusercontent.com/1205471/210029927-5716274b-c6be-4181-815e-479d2ec5aadb.png">
+
 And add row to spreadsheet like this
 <img width="794" alt="image" src="https://user-images.githubusercontent.com/1205471/210029962-653306b4-b38a-472d-966d-2119518d46ca.png">
 
 
 3. SSH into your Firewalla ([learn how](https://help.firewalla.com/hc/en-us/articles/115004397274-How-to-access-Firewalla-using-SSH-) if you don't know how already.)
 
-2. Create a file called fwalive.sh (I recommend the `/data` directory 
+4. Create a file called fwalive.sh (I recommend the `/data` directory:
+
 ```
 #!/bin/bash
-
 curl https://maker.ifttt.com/trigger/alive/json/with/key/YOURIFTTTKEY
 ```
 
 Note "alive" is the trigger and YOURIFTTTKEY can be found under Documentation https://ifttt.com/maker_webhooks 
 
-3. Next, you will want to create a cron job to call the webhook we created earlier on a schedule of your choosing. You do this by going to ~/.firewalla/config
-   
-   ```
-  cd ~/.firewalla/config 
-  vi user_crontab
-   ```
+3. Next, you will want to create a cron job to call the webhook we created earlier on a schedule of your choosing. You do this by going to ~/.firewalla/config:
+
+
+```
+cd ~/.firewalla/config 
+vi user_crontab
+```
    
    Add a line something like this:
    
@@ -92,6 +96,6 @@ Note "alive" is the trigger and YOURIFTTTKEY can be found under Documentation ht
    */1 * * * * /data/fwalive.sh
    ```
    
-   which says once every minute run the script that updates the spreadsheet via IFTTT. 
+which says once every minute run the script that updates the spreadsheet via IFTTT. 
    
 Save the file and restart Firewalla. You can confirm the cronjob is in place by doing `crontab -l` after Firewalla restarts. This will persist through updates and reboots but not resets. 
