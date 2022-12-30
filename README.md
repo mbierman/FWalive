@@ -4,13 +4,14 @@ This is a script for updating a Firewalla box's status to a Google Spreadsheet a
 
 
 # Notes
-- This requires an IFTTT account to work. 
+- This requires an IFTTT account to work.
+- Firewalla has some of this kind of functionality built in. But I wanted faster notifications and to be able to define how I got notified (email, slack, notification, etc.) 
 
 # Installation
 To install:
 1. Create a Google Spreadsheet [like this](https://docs.google.com/spreadsheets/d/1-31nv9rvPw_RRu9565bGzuondch9V0y8jQglDQo21uM/edit?usp=sharing)
 <img width="699" alt="image" src="https://user-images.githubusercontent.com/1205471/210029758-6edacdee-c632-497a-8acc-0cdccd2aee48.png">
-You can copy mine if you wish. 
+You can copy mine, if you wish. 
 
 2. Go to [IFTTT.com](https://IFTTT.com) and create an applet as shown below.
 <img width="828" alt="image" src="https://user-images.githubusercontent.com/1205471/210029514-f6eea947-b819-41a5-8d30-ff53eb90f331.png">
@@ -23,7 +24,10 @@ GoogleSheets.updateCellInSpreadsheet.setFilename('Alive');
 GoogleSheets.updateCellInSpreadsheet.setCell('A1');
 GoogleSheets.updateCellInSpreadsheet.setValue(mytime);
 ```
-The will receive a webhook from Firewalla on a schedule you choose and update the Google spreasheet.
+and the Spreadsheet action looks like this: 
+![image](https://user-images.githubusercontent.com/1205471/210031071-378c7bc4-adc1-4836-8f6d-30296211703c.png)
+
+The aplet will receive a webhook from Firewalla on a schedule you choose and update the Google spreasheet. Once you creeate it you can use curl or what have you to test updating the spreadsheet. 
  
 This assumes a setup like the spreadsheet provided. If you make any changes you have to adjust accordingly. 
 
